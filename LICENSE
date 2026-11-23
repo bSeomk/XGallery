@@ -1,0 +1,3 @@
+Own GUI/core/worker: GPL-3.0-or-later. See LICENSES/GPL-3.0.txt.
+Standalone src/extractor_engine.py: GPL-2.0-only. See LICENSES/GPL-2.0.txt.
+Third-party components retain their own licenses. See THIRD_PARTY.md.
