@@ -1,4 +1,4 @@
-# XGallery 1.0.0
+# XGallery 1.1.0
 
 X의 계정별 사진·동영상·GIF를 PC에 저장하고, 그룹·분류·좋아요로 정리해 보는 Windows용 로컬 갤러리입니다. Python이나 FFmpeg를 따로 설치하지 않고 사용할 수 있습니다.
 
@@ -6,9 +6,15 @@ XGallery는 X 및 콘텐츠 권리자와 제휴하거나 승인을 받은 공식
 
 ## 다운로드
 
-[**Windows 64비트 실행 ZIP 다운로드**](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/XGallery-1.0.0-win64.zip) · [1.0.0 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.0.0) · [문제 제보](https://github.com/bSeomk/XGallery/issues)
+[**Windows 64비트 실행 ZIP 다운로드**](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/XGallery-1.1.0-win64.zip) · [1.1.0 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.1.0) · [문제 제보](https://github.com/bSeomk/XGallery/issues)
 
-일반 사용자는 **XGallery-1.0.0-win64.zip**만 받으면 됩니다. 소스·빌드 정보 ZIP은 프로그램 실행에 필요하지 않습니다. [최신 배포판](https://github.com/bSeomk/XGallery/releases/latest)은 같은 공개 저장소에서 확인할 수 있습니다.
+일반 사용자는 **XGallery-1.1.0-win64.zip**만 받으면 됩니다. 소스·빌드 정보 ZIP은 프로그램 실행에 필요하지 않습니다. [최신 배포판](https://github.com/bSeomk/XGallery/releases/latest)은 같은 공개 저장소에서 확인할 수 있습니다.
+
+## 1.1.0 변경 사항
+
+- 직접 첨부, 재게시 원문, 인용 원문을 계정마다 선택할 수 있습니다. 수집 창의 **+고급** 또는 계정별 설정 텍스트 파일에서 바꿀 수 있습니다.
+- 누락된 원본을 로컬에서 검사하고, 해당 게시물만 조회해 다시 받을 수 있습니다.
+- 새 버전 알림에서 변경 내역을 읽고, **업데이트 적용 후 다시 시작** 버튼으로 다운로드부터 적용까지 진행할 수 있습니다.
 
 ## 주요 기능
 
@@ -69,6 +75,27 @@ Firefox를 미리 설치할 필요는 없습니다. 최초 로그인 준비 시 
 처음 선택한 계정의 미디어 유형은 빠른 업데이트를 선택해도 전체 범위를 한 번 확인합니다. 전체 범위 확인도 X에서 삭제되었거나 접근할 수 없는 자료까지 복구하지는 못합니다.
 
 진행 상황은 아래의 **수집 상태 펼치기**에서 확인할 수 있습니다. 수집 중에는 **수집 일시중지**를 사용하고, 다음 실행에서 **미완료 작업 재개**로 이어갑니다. 재개 시 서버 응답이나 파일 상태에 따라 일부 파일은 다시 받을 수 있습니다.
+
+### 계정별 수집 범위
+
+수집 창의 **+고급**에서 계정을 선택하고 **기본 · 직접 첨부**, **재게시 원문**, **인용 원문**을 각각 켜거나 끌 수 있습니다. 설정이 없는 계정은 직접 첨부만 수집합니다. 세 항목을 모두 끈 계정은 수집할 때 건너뜁니다.
+
+**설정 파일 폴더 열기**에서 UTF-8 텍스트 파일 `계정별수집설정.txt`을 직접 편집할 수 있습니다. 처음에는 고급 창에서 저장하면 파일이 만들어집니다.
+
+```text
+# 계정명 = 수집 범위
+@example = 기본, 재게시
+@another = 인용
+@paused = 수집 안 함
+```
+
+계정명 앞의 `@`는 생략할 수 있습니다. 빈 줄과 `#`로 시작하는 주석은 무시합니다. 기존 JSON 파일은 계속 읽으며 고급 창에서 저장하면 새 형식으로 바뀝니다.
+
+### 누락 원본 복구
+
+상단에서 계정·그룹 또는 모든 그룹을 선택하고 **누락 파일 검사**를 누르세요. 원본이 없거나 크기가 0바이트인 항목을 로컬에서 확인하며, 같은 파일을 공유하는 갤러리 항목이 여러 개면 파일 수와 항목 수를 따로 표시합니다.
+
+**누락 항목만 다시 받기**는 X 로그인 후 해당 원본 게시물만 조회합니다. X에서 삭제됐거나 접근할 수 없는 게시물은 복구할 수 없습니다.
 
 ## 갤러리 사용법
 
@@ -142,10 +169,10 @@ Firefox를 미리 설치할 필요는 없습니다. 최초 로그인 준비 시 
 
 앱 자체 코드는 **GPL-3.0-or-later**, 별도 수집기 어댑터는 **GPL-2.0-only**로 제공됩니다. 제3자 구성요소에는 각각의 라이선스가 적용됩니다. [LICENSE](LICENSE), [THIRD_PARTY.md](THIRD_PARTY.md), `LICENSES` 폴더의 고지를 확인하세요.
 
-소스 코드는 [1.0.0 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.0.0)의 별도 첨부 파일로 제공합니다. 다른 버전을 사용하는 경우 그 버전의 릴리스에서 대응 소스를 받으세요.
+소스 코드는 [1.1.0 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.1.0)의 별도 첨부 파일로 제공합니다. 다른 버전을 사용하는 경우 그 버전의 릴리스에서 대응 소스를 받으세요.
 
-- [**SOURCE.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/SOURCE.zip): 해당 배포본에 대응하는 XGallery 소스 코드
-- [**THIRD-PARTY-SOURCES.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/THIRD-PARTY-SOURCES.zip): 사용한 라이브러리의 대응 소스·패치·빌드 정보
-- [**BUILD-INFO.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/BUILD-INFO.zip): 태그·커밋·파일 해시, 구성요소 검사와 빌드·검수 정보
+- [**SOURCE.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/SOURCE.zip): 해당 배포본에 대응하는 XGallery 소스 코드
+- [**THIRD-PARTY-SOURCES.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/THIRD-PARTY-SOURCES.zip): 사용한 라이브러리의 대응 소스·패치·빌드 정보
+- [**BUILD-INFO.zip**](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/BUILD-INFO.zip): 태그·커밋·파일 해시, 구성요소 검사와 빌드·검수 정보
 
 GitHub가 자동으로 표시하는 “Source code” 압축 파일과 별도로 제공하는 위 소스 묶음을 사용하세요. 소스 압축 파일은 프로그램 실행에 필요하지 않습니다. 소스 수정·재빌드 및 라이브러리 교체에 관한 설명은 소스 묶음과 `THIRD_PARTY.md`를 참고하세요.

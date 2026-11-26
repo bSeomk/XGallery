@@ -1,10 +1,10 @@
 # 제3자 구성요소·대응 소스
 
-XGallery 1.0.0의 실행 ZIP에는 라이선스 전문·저작권 고지를 포함합니다. 대응 소스와 빌드 정보는 같은 [공개 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.0.0)에서 무료로 별도 제공합니다.
+XGallery 1.1.0의 실행 ZIP에는 라이선스 전문·저작권 고지를 포함합니다. 대응 소스와 빌드 정보는 같은 [공개 릴리스](https://github.com/bSeomk/XGallery/releases/tag/v1.1.0)에서 무료로 별도 제공합니다.
 
-- [SOURCE.zip](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/SOURCE.zip): 배포본과 대응하는 앱 소스
-- [THIRD-PARTY-SOURCES.zip](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/THIRD-PARTY-SOURCES.zip): 제3자 원본 소스, 패치, 빌드 레시피 및 출처/해시 잠금 파일
-- [BUILD-INFO.zip](https://github.com/bSeomk/XGallery/releases/download/v1.0.0/BUILD-INFO.zip): 배포 태그·커밋·실행 파일/소스 해시, 실제 바이너리 구성 검사 및 재빌드 설명
+- [SOURCE.zip](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/SOURCE.zip): 배포본과 대응하는 앱 소스
+- [THIRD-PARTY-SOURCES.zip](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/THIRD-PARTY-SOURCES.zip): 제3자 원본 소스, 패치, 빌드 레시피 및 출처/해시 잠금 파일
+- [BUILD-INFO.zip](https://github.com/bSeomk/XGallery/releases/download/v1.1.0/BUILD-INFO.zip): 배포 태그·커밋·실행 파일/소스 해시, 실제 바이너리 구성 검사 및 재빌드 설명
 
 위 파일들은 프로그램 실행에 필요하지 않습니다. 실행 ZIP을 다른 곳에서 재배포하는 경우에도 대응 소스의 제공과 각 라이선스 의무를 유지해야 합니다.
 
